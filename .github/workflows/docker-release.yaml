@@ -28,7 +28,7 @@ jobs:
           version: latest
 
         # https://github.com/docker/build-push-action#handle-tags-and-labels
-      - name: Login to DockerHub 
+      - name: Login to container registry 
         uses: docker/login-action@v1 
         with:
           registry: ghcr.io
@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
         # https://github.com/docker/build-push-action#handle-tags-and-labels
-      - name: Push to Docker Hub
+      - name: Push to container registry
         uses: docker/build-push-action@v2
         with:
           context: .
